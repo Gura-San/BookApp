@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
-  def index; end
+  def index 
+    @books = Book.all.order("created_at DESC")
+  end
 
   def new
     @book = Book.new
